@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+    <!-- 查询所有数据 -->
+    <select id="selectAll" resultType="com.example.model.User">
+        SELECT * FROM users
+    </select>
+
+    <!-- 根据id删除指定数据 -->
+    <delete id="deleteById">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+
+    <!-- 添加一条数据 -->
+    <insert id="insertUser">
+        INSERT INTO users (name, age, sal) VALUES (#{name}, #{age}, #{sal})
+    </insert>
+
+    <!-- 根据id修改sal数据 -->
+    <update id="updateSalById">
+        UPDATE users SET sal = #{sal} WHERE id = #{id}
+    </update>
+</mapper>
